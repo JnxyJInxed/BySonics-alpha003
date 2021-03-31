@@ -2,9 +2,10 @@ const mongoose = require("mongoose");
 
 const dataSchema = mongoose.Schema({
     //_id : mongoose.Schema.Types.ObjectId,
-    index_Record :{
-        type : Number
-    },
+    //jadinya dikasih kalau udah fiks aja
+    // index_Record :{
+    //     type : Number
+    // },
     id_rompi : {
         type : String
     },

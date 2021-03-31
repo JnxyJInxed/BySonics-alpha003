@@ -45,6 +45,26 @@ const recordTracker = require('../../recordTracker')
     router.get('/Record/:ID', async (req,res) => {
         try{
             console.log(req.query.pasienID);
+            console.log(req.query.recordIndex);
+            noRecord = await recordTracker.getNumberofRecord(req.query.pasienID);
+            const query = {
+                index_Record : req.query.recordIndex,
+                id_pasien: req.query.pasienID
+            }
+            //console.log(req.body.id_pasien);
+            const dataAllSensor_All = await dataAllSensor.find(query);
+            console.log(dataAllSensor_All);
+            res.json(dataAllSensor_All);   
+        }catch(err){
+            console.log(err);
+            res.json({message: 'err GET ALL Sensor by ID'});
+        }
+    });
+
+    //get RECORD ke-N by ID
+    router.get('/Record/:ID', async (req,res) => {
+        try{
+            console.log(req.query.pasienID);
             noRecord = await recordTracker.getNumberofRecord(req.query.pasienID);
             const query = {
                 index_Record : noRecord,
@@ -59,7 +79,6 @@ const recordTracker = require('../../recordTracker')
             res.json({message: 'err GET ALL Sensor by ID'});
         }
     });
-
     //get All by ID
     router.get('/All_Specific', async (req,res) => {
         try{

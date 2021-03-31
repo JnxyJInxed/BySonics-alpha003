@@ -3,7 +3,7 @@ const router = express.Router();
 const mongoose = require ('mongoose');
 //Deklarasi Model
 const dataAllSensor = require('../../models/DataRekonstruksi/AllSensorRekons_Model');
-const recordTracker = require('../../recordTracker')
+//const recordTracker = require('../../recordTracker')
 
 //DATA Accelerometer  
     //get all
@@ -61,11 +61,11 @@ const recordTracker = require('../../recordTracker')
     router.post('/save', async (req,res) => { //pake async kalau save CARA 2
         console.log(req.body) //cek Body
         //ADD RECORD
-        const noRecord = await recordTracker.getNumberofRecord(req.body.id_pasien);
-        console.log(noRecord);
+        //const noRecord = await recordTracker.getNumberofRecord(req.body.id_pasien);
+        //console.log(noRecord);
         //
         const newData = new dataAllSensor({ //masukin info dari body ke salam model database Post
-                    index_Record :noRecord,
+                    //index_Record :noRecord,
                     id_rompi : req.body.id_rompi,
                     id_sensor : req.body.id_sensor, 
                     id_pasien : req.body.id_pasien,

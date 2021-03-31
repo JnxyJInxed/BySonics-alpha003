@@ -41,7 +41,7 @@ var record = false;
                    const noRecord = await recordTracker.updateNumberofRecord(req.body.id_pasien);
                    res.status(200).send(
                     {
-                        message : "Recording User "+  req.body.id_pasien + " No. " + noRecord + " Started"
+                        message : "Recording User ID: "+  req.body.id_pasien + " No. " + noRecord + " Started"
                     });
                 }else{
                     res.status(400).send(
