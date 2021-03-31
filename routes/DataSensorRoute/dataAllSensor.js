@@ -61,7 +61,7 @@ const recordTracker = require('../../recordTracker')
     });
 
     
-    router.get('/LastreRecord/:ID', async (req,res) => {
+    router.get('/LastRecord/:ID', async (req,res) => {
         try{
             console.log(req.query.pasienID);
             noRecord = await recordTracker.getNumberofRecord(req.query.pasienID);
