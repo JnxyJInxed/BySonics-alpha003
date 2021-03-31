@@ -41,12 +41,11 @@ const recordTracker = require('../../recordTracker')
             res.json({message: 'err GET LAST by All Sensor ID'});
         }
     });
-    //get RECORD ke-N by ID
+    //get LAST RECORD by ID
     router.get('/Record/:ID', async (req,res) => {
         try{
             console.log(req.query.pasienID);
             console.log(req.query.recordIndex);
-            noRecord = await recordTracker.getNumberofRecord(req.query.pasienID);
             const query = {
                 index_Record : req.query.recordIndex,
                 id_pasien: req.query.pasienID
@@ -61,7 +60,7 @@ const recordTracker = require('../../recordTracker')
         }
     });
 
-    //get LAST RECORD by ID
+    
     router.get('/Record/:ID', async (req,res) => {
         try{
             console.log(req.query.pasienID);
