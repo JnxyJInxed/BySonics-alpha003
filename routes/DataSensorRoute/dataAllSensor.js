@@ -61,7 +61,7 @@ const recordTracker = require('../../recordTracker')
     });
 
     
-    router.get('/LastRecord/:ID', async (req,res) => {
+    router.get('/LastreRecord/:ID', async (req,res) => {
         try{
             console.log(req.query.pasienID);
             noRecord = await recordTracker.getNumberofRecord(req.query.pasienID);
@@ -96,6 +96,7 @@ const recordTracker = require('../../recordTracker')
 
     router.post('/save', async (req,res) => { //pake async kalau save CARA 2
         //ADD RECORD
+        console.log("SAVE REKONS " + req.body);
         const noRecord = await recordTracker.getNumberofRecord(req.body.id_pasien);
         console.log(noRecord);
         //
